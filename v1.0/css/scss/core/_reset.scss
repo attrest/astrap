@@ -1,0 +1,530 @@
+﻿@charset "utf-8";
+
+/*
+ Modify by attrest attrest(http://www.attrest.com)
+ >> Reset Stylesheet :: normalize.css v3.0.2 | MIT License | git.io/normalize
+ */
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*
+ * 기본 글꼴을 sans-serif로 설정
+ * iOS와 IE에서 기기 회전시 글씨 크기 재조정 방지
+ */
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* HTML5 display definitions ========================================================================== */
+
+/*
+ * IE8/9에서 정의되지 않은 HTML5 요소를 'block'으로 지정
+ * IE10/11, Firefox에서 정의되지 않은 `detail` 혹은 `summary` 를 `block`으로 지정
+ * IE11에서 정의되지 않은 `main`을 `block`으로 지정
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	display: block;
+}
+
+/*
+ * 1. IE8/9에서 `inline-block`으로 정의되지 않은 것을 올바르게 지정
+ * 2. Chrome, Firefox, Opera에서 `progress`의 세로 정렬 표준화
+ */
+audio, canvas, progress, video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+/*
+ * 모던 브라우저들에서 controls 속성없이 audio 요소가 렌더링 되는 것을 방지
+ * iOS 5 기기에서 높이를 초과하는 것을 제거
+ */
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+/*
+ * [hidden] 속성의 스타일이 IE 8/9/10에서 존재하지 않는 것을 해결
+ * IE 8/9/10/11, Safari, Firefox < 22 에서 `template` 요소를 숨김
+ */
+[hidden], template {
+	display: none;
+}
+
+
+/* Links ========================================================================== */
+
+/*
+ * IE10에서 활성화(active)된 링크의 회색 배경 제거
+ */
+a {
+	color: inherit;
+	text-decoration: none;
+	background-color: transparent;
+	&:active, &:hover {
+		outline: 0;
+	}
+}
+
+
+/* Text-level semantics ========================================================================== */
+
+/*
+ * IE 8/9/10/11, Safari, Chrome에서 존재하지 않는 스타일 추가
+ */
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+/*
+ * Firefox 4+, Safari, Chrome에서 `bolder`로 설정되어 있는 것을 `bold`로 수정
+ */
+b, strong {
+	font-weight: bold;
+}
+
+/*
+ * Safari,Chrome에서 존재하지 않는 스타일 추가
+ */
+dfn {
+	font-style: italic;
+}
+
+/*
+ * Firefox 4+, Safari, Chrome에서 `section`과 `article` 내부의 `h1` 요소의 글꼴 크기와 마진값이 서로 다른 것을 통일
+ */
+h1 {
+	font-size: 2em;
+	margin: 0;
+}
+
+/*
+ * IE 8/9에서 존재하지 않는 스타일 추가
+ */
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+/*
+ * 브라우저마다 다른 글꼴 크기 통일
+ */
+small {
+	font-size: 80%;
+}
+
+/*
+ * 'sub'과 'sup'요소가 모든 브라우저에서 'line-height'에 미치는 영향 방지
+ */
+sub {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+
+/* Embedded content ========================================================================== */
+
+/*
+ * IE 8/9/10에서 `a` 요소안에 이미지가 위치할 경우 생기는 테두리 제거
+ */
+img {
+	vertical-align: top;
+	border: 0;
+	height: auto;
+	max-width: 100%;
+}
+
+/*
+ * IE 9/10/11에서 `svg` 요소가 영역의 크기를 벗어나지 않도록 수정
+ */
+svg:not(:root) {
+	overflow: hidden;
+}
+
+
+/* Grouping content ========================================================================== */
+
+/*
+ * IE 8/9, Safari에서 존재하지 않는 `margin` 값을 부여
+ */
+figure {
+	margin: 1em 40px;
+}
+
+/*
+ * Firefox와 다른 브라우저들 사이의 차이 조정
+ */
+hr {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 0;
+}
+
+/*
+ * 모든 브라우저에서 `pre` 요소의 `overfolow` 값을 통일
+ */
+pre, code, kbd, samp {
+	font-size: .8rem;
+	line-height: 1.4;
+}
+
+pre {
+	margin-bottom: 20px;
+	overflow: auto;
+}
+
+code {
+	padding: 0 .2em;
+	color: #a6a6a6;
+}
+
+
+/* Forms ========================================================================== */
+
+/*
+ * 기본적으로 OS X의  Chrome과 Safari는 `border` 속성을 지정하지 않는 한 `select` 요소의 스타일링에 매우 제한적
+ * color 속성이 상속되지 않는 것을 수정(disabled 된 요소의 color 속성에도 영향을 미침)
+ * font 속성이 상속되지 않는 것을 수정
+ * Firefox 4+, Safari, Chrome에서 마진이 서로 다른 것을 통일 시킴
+ */
+button, input, optgroup, select, textarea {
+	margin: 0;
+}
+
+/*
+ * IE 8/9/10/11에서 `overflow` 속성값이 `hidden`으로 설정되어 있는 것을 수정
+ */
+button {
+	overflow: visible;
+	text-transform: none;
+}
+
+/*
+ * `button`과 `select` 요소에 `text-transform` 상속이 일치하지 않는 것을 해결(모든 다른 폼 컨트롤 요소는 `text-transform` 값을 상속하지 않음)
+ * IE 8/9/10/11, Firefox, Opera에서 `button` 요소의 스타일 상속 수정
+ * Firefox에서 `select` 요소의 스타일 상속 수정
+ */
+select {
+	text-transform: none;
+}
+
+/*
+ * Android 4.0.*에서 `audio`와 `video` 컨트롤을 파괴하는 웹킷 버그 방지
+ * iOS에서 클릭가능한 `input` 유형에 스타일링을 할 수 없는 것을 수정
+ * `input` 요소와 다른 요소들의 image-type의 커서 모양을 일치시켜 가용성 향상
+ * `input` and others.
+ */
+button, html input[type="button"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+input {
+	&[type="reset"], &[type="submit"] {
+		-webkit-appearance: button;
+		cursor: pointer;
+	}
+}
+
+/*
+ * disabled된 요소의 기본 커서를 재설정
+ */
+button[disabled], html input[disabled] {
+	cursor: default;
+}
+
+/*
+ * Firefox 4+에서 내부 `padding`과 `border`를 제거
+ */
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/*
+ * Firefox 4+에서 UA(User Agent) 스타일시트에 `!important`를 사용한 `input` 요소의 `line-height` 설정값 해결
+ * IE 8/9/10에서 box sizing 속성값을 `content-box`에서 `border-box`로 변경
+ * IE 8/9/10에서 영역을 벗어나지 않도록 `padding`을 제거
+ * Chrome의 증가/감소 버튼의 커서 모양을 수정
+ * `input` 요소의 특정 `font-size` 값에 대해 감소 버튼의 커서 모양이 `default`에서 `text`로 변함
+ * OS X의 Safari, Chrome에서 내부(inner) `padding`과 검색 취소 버튼을 제거
+ * Safari (but not Chrome) clips the cancel button when the search input has padding (and `textfield` appearance)
+ */
+input {
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+	line-height: normal;
+	&[type="checkbox"], &[type="radio"] {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding: 0;
+	}
+	&[type="number"] {
+		&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+			height: auto;
+		}
+	}
+	&[type="search"] {
+		-webkit-appearance: textfield;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		&::-webkit-search-cancel-button, &::-webkit-search-decoration {
+			-webkit-appearance: none;
+		}
+	}
+}
+
+/*
+ * `border`, `margin`, `padding`을 일치
+ */
+fieldset {
+	border: 1px solid #ddd;
+	margin: 0;
+	padding: 0.3em;
+}
+
+/**
+ * IE 8/9/10/11에서 `color`는 상속되지 않음
+ * Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+	border: 0;
+	padding: 0;
+}
+
+/*
+ * IE 8/9/10/11에서 기본 세로 스크롤바 제거
+ */
+textarea {
+	overflow: auto;
+}
+
+/*
+ * `font-weight`는 상속되지 않음 (applied by a rule above).
+ * OS X의 Chrome과 Safari에서 기본값을 변경하는 것은 안전하지 않음
+ */
+optgroup {
+	font-weight: bold;
+}
+
+
+/* Tables & List ========================================================================== */
+
+/*
+ * 테이블 요소 사이의 간격을 제거
+ */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td, th {
+	padding: 0;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+/*=================================================
+	Element
+*/
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+hr {
+	background-color: #e5e5e5;
+	border: 0;
+	height: 1px;
+	margin: 1.5em 0;
+	clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	line-height: 1.4;
+	clear: both;
+}
+
+b, strong {
+	font-weight: normal;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+code, kbd, pre, samp {
+	font-family: "Menlo", "Monaco", "Consolas", "Courier New", "monospace";
+}
+
+kbd {
+	padding: 2px 4px;
+	font-size: 90%;
+	color: #fff;
+	background: #333;
+	border-radius: 4px;
+}
+
+mark {
+	background: #fff7be;
+	padding: .2rem;
+}
+
+del {
+	color: #a6a6a6;
+}
+
+s {
+	color: #9f9f9f;
+}
+
+ins {
+	color: #777;
+}
+
+small {
+	font-size: 80%
+}
+
+abbr {
+	cursor: help;
+	border-bottom: 1px dotted #9f9f9f;
+}
+
+/*=================================================
+	Form
+*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background: #eee;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 90%;
+	padding-left: 12px;
+	padding-right: 12px;
+	vertical-align: middle;
+	&:hover, &:active {
+		border-color: #a6a6a6;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea,
+select {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding-left: $defaultPaddingHorizontal;
+	padding-right: $defaultPaddingHorizontal;
+	color: inherit;
+	vertical-align: middle;
+}
+select {
+	padding-right: 2.2em;
+	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+	-moz-appearance: none;
+	appearance: none;
+	background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSI4LjUgOC41IDE2IDE2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDguNSA4LjUgMTYgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBvbHlnb24gZmlsbD0iI0E2QTZBNiIgcG9pbnRzPSIyMi4wMTEsMTMgMTYuNSwxNy45NTEgMTAuOTg5LDEzIDEwLDE0LjE1OSAxNi41LDIwIDIzLDE0LjE1OSAiLz4NCjwvc3ZnPg0K") no-repeat 90% center;
+	background-size: .8em;
+}
+
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand { display: none; }
+/* IE9 핵 */
+select{ padding-right: .5em \0/IE9; }
+/* IE10 핵 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { select { padding-right: 2.2em } }
+
+textarea {
+	width: 100%;
+}
+
+label {
+	padding-left: $labelPadding;
+	padding-right: $labelPadding;
+}
+
+:focus {
+	outline: none;
+}
+
+/* 웹 접근성을 위한 포커스 표시 */
+input[type="button"]:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
+button:focus,
+select:focus {
+	outline: 1px dotted #a6a6a6;
+}
+
+/* 선택 된 영역의 배경색상 지정 */
+::selection  { background:#ddd; }
+::-moz-selection { background: #e2eae2; }
+::-webkit-selection { background: #e2eae2; }
+
+/*=================================================
+	클릭 가능한 요소에 커서 모양 추가
+*/
+a[href],
+input[type="submit"],
+input[type="image"],
+label[for],
+select,
+button {
+		cursor: pointer;
+}

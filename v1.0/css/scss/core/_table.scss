@@ -1,0 +1,280 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	TABLE
+*/
+.as-table {
+	width: 100%;
+	table-layout: fixed;
+	border-top: 2px solid $defaultBlack;
+	margin-bottom: 20px;
+	text-align: center;
+	th, td {
+		padding: 4px $tableHorizontalPadding;
+		border-bottom: 1px solid $tableBorder;
+		word-break: break-word;
+	}
+	th {
+		font-weight: $defaultFontWeightBold;
+	}
+	&.as-table-bordered {
+		th, td {
+			border: 1px solid $tableBorder;
+		}
+	}
+	&.as-table-condensed {
+		font-size: 90%;
+		th, td {
+			padding: 2px $tableHorizontalPadding/2;
+			font-size: 90%;
+		}
+		input, select, button {
+			height: $smallInputHeight;
+			padding: 2px 8px;
+		}
+	}
+	&.as-table-striped {
+		tbody {
+			tr {
+				&:nth-child(odd) {
+					background-color: $tableOdd;
+				}
+				&:nth-child(even) {
+					background-color: $tableEven;
+				}
+			}
+		}
+	}
+	&.as-table-hover {
+		tbody {
+			tr:hover {
+			   background-color: $tableHighlight;
+			}
+		}
+	}
+	&.as-table-form {
+		tbody {
+			th {
+				text-align: right;
+				width: 120px;
+				&.required {
+					position: relative;
+					&:after {
+						content: "*";
+						position: absolute;
+						top: 6px;
+						right: 6px;
+						width: 10px;
+						height: 10px;
+						text-align: center;
+						color: $defaultRed;
+						vertical-align: top;
+					}
+				}
+			}
+			td {
+				text-align: left;
+			}
+		}
+	}
+	@media screen and (max-width: $responsiveBreakpointMin) {
+		&.as-table-responsive, &.as-table-responsive-justify {
+			text-align: left;
+			colgroup col {
+				width: auto !important;
+				&:first-child {
+					width: 100% !important;
+				}
+			}
+			thead {
+				display: none;
+			}
+			tr {
+				border-bottom: 1px solid $defaultGrayMedium;
+				th, td {
+					position: relative;
+					display: block;
+					padding-left: $tableResponsiveMargin;
+					font-size: 90%;
+					&:before {
+						content: attr(data-label);
+						position: absolute;
+						top: 50%;
+						left: 0;
+						transform: translateY(-50%);
+						width: $tableResponsiveMargin - $tableHorizontalPadding;
+						text-align: left;						
+						color: $defaultGrayMedium;
+						z-index: 1;
+					}
+					&:hover:before {
+						left: 0;
+						width: 100%;
+						padding-left: 16px;
+					}
+					&:last-child {
+						border-bottom: 0;
+					}
+				}
+				th {
+					text-align: left;
+					padding-left: $tableHorizontalPadding;
+					&:before {
+						display: none;
+					}
+					&:after {
+						content: $iArrowBottom;
+						@include setAscon;
+						position: absolute;
+						top: 50%;
+						right: $tableHorizontalPadding;
+						transform: translateY(-50%);
+					}
+				}
+			}
+			&.as-table-responsive-justify {
+				text-align: right;
+			}
+			&.as-table-bordered {
+				tr {
+					border: 1px solid $defaultGrayMedium;
+					th, td {
+						border: 0;
+						border-top: 1px solid $tableBorder;
+					}
+					td {
+						&:after {
+							content: "";
+							position: absolute;
+							top: 0;
+							bottom: 0;
+							left: $tableResponsiveMargin - $tableHorizontalPadding;
+							width: 1px;
+							background-color: $tableBorder;
+							z-index: 0;
+						}
+					}
+				}
+			}
+			@for $i from 2 through 6 {
+				&.as-table-col-#{$i} {
+					tr {
+						float: left;
+						width: 100%;
+						@include clearBoth;
+						th {
+							float: left;
+							width: 100%;
+							border-bottom: 1px solid $tableBorder !important;
+						}
+						td {
+							float: left;
+							width: 100% / $i;
+							padding: 4px $tableHorizontalPadding/2;
+							border: 0 !important;
+							border-right: 1px solid $tableBorder !important;
+							border-bottom: 1px solid $tableBorder !important;
+							&:first-child,
+							&:nth-child(#{$i}n+1) {
+								border-left: 1px solid $tableBorder !important;
+							}
+							@include textEllipsis;
+							&:before {
+								position: static;
+								display: block;
+								transform: initial;
+								padding: 0 !important;
+							}
+							&:after {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.as-table-responsive-overflow {
+			display: inline-block;
+			width: auto;
+			max-width: 100%;
+			overflow-x: auto;
+			white-space: nowrap;
+			th, td {
+				&:first-child {
+					@include responsiveTableMask(right);
+				}
+				&:last-child {
+					@include responsiveTableMask(left);
+				}
+			}
+			&.as-table-bordered {
+				th, td {
+					border-right: 0;
+					border-bottom: 0;
+				}
+				th:last-child, td:last-child {
+					border-right: 1px solid $tableBorder;
+				}
+				tr:last-child th, tr:last-child td {
+					border-bottom: 1px solid $tableBorder;
+				}
+			}
+		}
+		&.as-table-responsive-overflow-flip {
+			display: flex;
+			overflow: hidden;
+			border-top: 0;
+			thead {
+				display: flex;
+				flex-shrink: 0;
+				min-width: min-content;
+			}
+			tbody {
+				display: flex;
+				position: relative;
+				overflow-x: auto;
+				overflow-y: hidden;
+			}
+			tr {
+				display: flex;
+				flex-direction: column;
+				min-width: min-content;
+				flex-shrink: 0;
+				&:first-child {
+					@include responsiveTableMask(right);
+				}
+				&:last-child {
+					@include responsiveTableMask(left);
+				}
+			}
+			th, td {
+				display: block;
+			}
+			&.as-table-bordered {
+				thead, tbody {
+					border-top: 2px solid $defaultBlack;
+				}
+				th, td {
+					border-right: 0;
+					border-bottom: 0;
+				}
+				thead th {
+					border-right: 0 !important;
+				}
+				tr:last-child th, tr:last-child td {
+					border-right: 1px solid $tableBorder;
+				}
+				tr th:last-child, tr td:last-child {
+					border-bottom: 1px solid $tableBorder;
+				}
+			}
+		}
+		&.as-table-responsive-overflow, &.as-table-responsive-overflow-flip tbody {
+			@include responsiveTableShadow;
+		}
+	}/* media */
+}/* as-table */

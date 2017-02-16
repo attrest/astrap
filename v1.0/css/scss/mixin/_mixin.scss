@@ -1,0 +1,182 @@
+$asBlueLight: #3dcce5;
+$asBlue: #22b3d1;
+
+/*
+ * Shadow
+ */
+@mixin boxShadow($x:0, $y: 1px, $blur: 2px, $color: rgba(0, 0, 0, .5), $type: false) {
+	@if $type == inset {
+		-webkit-box-shadow: inset $x $y $blur $color;
+		-moz-box-shadow: inset $x $y $blur $color;
+		box-shadow: inset $x $y $blur $color;
+	} @else if $type == diff {
+		box-shadow: 0 $y*20 $blur*40 $y*-10 $color;
+	} @else {
+		-webkit-box-shadow: $x $y $blur $color;
+		-moz-box-shadow: $x $y $blur $color;
+		box-shadow: $x $y $blur $color;
+	}
+}
+
+
+/*
+ * Background
+ */
+@mixin linearGradient($angle: 180deg, $start: $asBlueLight, $end: $asBlue, $preset: default) {
+	@if $preset == night {
+		background-color: $end;
+		background-image: -webkit-linear-gradient($angle, #1b2735, #090a0f);
+		background-image: -moz-linear-gradient($angle, #1b2735, #090a0f);
+		background-image: -ms-linear-gradient($angle, #1b2735, #090a0f);
+		background-image: -o-linear-gradient($angle, #1b2735, #090a0f);
+		background-image: linear-gradient($angle, #1b2735, #090a0f);
+	} @else {
+		background-color: $end;
+		background-image: -webkit-linear-gradient($angle, $start, $end);
+		background-image: -moz-linear-gradient($angle, $start, $end);
+		background-image: -ms-linear-gradient($angle, $start, $end);
+		background-image: -o-linear-gradient($angle, $start, $end);
+		background-image: linear-gradient($angle, $start, $end);
+	}
+}
+
+@mixin radialGradient($shape: circle, $pos: center, $colorStep: $asBlueLight 0%, $endColor: $asBlue, $preset: default) {
+	@if $preset == night {
+		background: $endColor;
+		background: -webkit-radial-gradient($shape at bottom, #1b2735 0%, #090a0f 100%);
+		background: -o-radial-gradient($shape at bottom, #1b2735 0%, #090a0f 100%);
+		background: -moz-radial-gradient($shape at bottom, #1b2735 0%, #090a0f 100%);
+		background: radial-gradient($shape at bottom, #1b2735 0%, #090a0f 100%);
+	} @else {
+		background: $endColor;
+		background: -webkit-radial-gradient($shape at $pos, unquote($colorStep), $endColor 100%);
+		background: -o-radial-gradient($shape at $pos, unquote($colorStep), $endColor 100%);
+		background: -moz-radial-gradient($shape at $pos, unquote($colorStep), $endColor 100%);
+		background: radial-gradient($shape at $pos, unquote($colorStep), $endColor 100%);
+	}
+}
+
+
+/*
+ * Text
+ */
+@mixin textEllipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin textHide($fontRemove: false) {
+	@if $fontRemove == true {
+		font: 0/0 a;
+	}
+	color:transparent;
+	text-indent: -99999px;
+	text-shadow: none;
+}
+
+/*
+ * Position
+ */
+@mixin positionAlign($pos: absolute, $top: 50%, $left: 50%, $type: center) {
+
+	@if $pos == fixed {
+		position: fixed;
+	} @else {
+		position: absolute;
+	}
+
+	top: $top;
+	left: $left;
+
+	@if $type == center {
+		transform: translate(-50%, -50%);
+	} @else if $type == x {
+		transform: translateX(-50%);
+	} @else if $type == y {
+		transform: translateY(-50%);
+	}
+
+}
+
+@mixin positionScreen($type: absolute, $bgColor: rgba(0,0,0,.5)) {
+	@if $type == absolute {
+		position: absolute;
+	} @else if $type == fixed {
+		position: fixed;
+	}
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: $bgColor;
+}
+
+
+/*
+ * Clear
+ */
+@mixin clearBoth {
+    &:before, &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+}
+
+/*
+ * Effect
+ */
+@function multipleBoxShadow($n: 500, $random: 2000) {
+	$value: '#{random($random)}px #{random($random)}px #FFF';
+	@for $i from 2 through $n {
+		$value: '#{$value} , #{random($random)}px #{random($random)}px #FFF';
+	}
+	@return unquote($value)
+}
+@mixin starsInTheNightSky( $size: 1px, $stars: 100, $speed: 100s, $top: 2000px, $type: default ) {
+	width: $size;
+	height: $size;
+	background: transparent;
+	box-shadow: multipleBoxShadow( $stars );
+	@if $type == default {
+		animation: AsTranslateVertical $speed linear infinite;
+	} @else {
+		animation: AsTranslateVerticalDown $speed linear infinite;
+	}
+	&:after {
+		content: " ";
+		position: absolute;
+		@if $type == snow {
+			top: 0;
+		} @else {
+			top: $top;
+		}
+		width: 2px;
+		height: 2px;
+		background: transparent;
+		box-shadow: multipleBoxShadow( $stars );
+	}
+
+	@if $type == default {
+		@keyframes AsTranslateVertical {
+			from {
+				transform: translateY(0);
+			}
+			to {
+				transform: translateY(-$top);
+			}
+		}
+	} else {
+		@keyframes AsTranslateVerticalDown {
+			from {
+				transform: translateY(-$top);
+			}
+			to {
+				transform: translateY(0);
+			}
+		}
+	}
+}

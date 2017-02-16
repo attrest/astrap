@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	ACCESSIBILITY
+*/
+.as-accessibility-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+	&:focus {
+		position: fixed;
+		top: .6em;
+		left: 50%;
+		transform: translateX(-50%);
+		width: auto;
+		height: auto;
+		clip: auto;
+		padding: .15em .5em;
+		margin: 0;
+		z-index: 99999;
+		background: #f8f8f8;
+		border: 1px solid #ddd;
+		border-radius: .3em;
+		font-size: .8rem;
+	}
+}
+
+.as-accessibility-hidden {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	font-size: 0;
+	border: 0;
+}

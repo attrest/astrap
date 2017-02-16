@@ -1,0 +1,222 @@
+@font-face {
+  font-family: 'ascon';
+  src:
+    url('fonts/ascon.ttf?7brdna') format('truetype'),
+    url('fonts/ascon.woff?7brdna') format('woff'),
+    url('fonts/ascon.svg?7brdna#ascon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ascon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ascon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ascon-arrow-bottom-100:before {
+  content: "\e900";
+}
+.ascon-arrow-bottom-200:before {
+  content: "\e901";
+}
+.ascon-arrow-left-100:before {
+  content: "\e902";
+}
+.ascon-arrow-left-200:before {
+  content: "\e903";
+}
+.ascon-arrow-right-100:before {
+  content: "\e904";
+}
+.ascon-arrow-right-200:before {
+  content: "\e905";
+}
+.ascon-arrow-top-100:before {
+  content: "\e906";
+}
+.ascon-arrow-top-200:before {
+  content: "\e907";
+}
+.ascon-chat:before {
+  content: "\e908";
+}
+.ascon-check-100:before {
+  content: "\e909";
+}
+.ascon-check-200:before {
+  content: "\e90a";
+}
+.ascon-close-100:before {
+  content: "\e90b";
+}
+.ascon-close-200:before {
+  content: "\e90c";
+}
+.ascon-document:before {
+  content: "\e90d";
+}
+.ascon-error:before {
+  content: "\e90e";
+}
+.ascon-error-line:before {
+  content: "\e90f";
+}
+.ascon-link:before {
+  content: "\e910";
+}
+.ascon-mail:before {
+  content: "\e911";
+}
+.ascon-man:before {
+  content: "\e912";
+}
+.ascon-man-line:before {
+  content: "\e913";
+}
+.ascon-menu-100:before {
+  content: "\e914";
+}
+.ascon-menu-200:before {
+  content: "\e915";
+}
+.ascon-minus-100:before {
+  content: "\e916";
+}
+.ascon-minus-200:before {
+  content: "\e917";
+}
+.ascon-pencil:before {
+  content: "\e918";
+}
+.ascon-pencil-line:before {
+  content: "\e919";
+}
+.ascon-plus-100:before {
+  content: "\e91a";
+}
+.ascon-plus-200:before {
+  content: "\e91b";
+}
+.ascon-search:before {
+  content: "\e91c";
+}
+.ascon-share:before {
+  content: "\e91d";
+}
+.ascon-share-line:before {
+  content: "\e91e";
+}
+.ascon-star:before {
+  content: "\e91f";
+}
+.ascon-star-line:before {
+  content: "\e920";
+}
+.ascon-triangle:before {
+  content: "\e921";
+}
+.ascon-triangle-rounded:before {
+  content: "\e922";
+}
+.ascon-warning:before {
+  content: "\e923";
+}
+.ascon-warning-line:before {
+  content: "\e924";
+}
+.ascon-astrap:before {
+  content: "\e925";
+}
+.ascon-attrest:before {
+  content: "\e926";
+}
+.ascon-browser-chrome:before {
+  content: "\e927";
+}
+.ascon-browser-explorer:before {
+  content: "\e928";
+}
+.ascon-browser-firefox:before {
+  content: "\e929";
+}
+.ascon-browser-opera:before {
+  content: "\e92a";
+}
+.ascon-browser-safari:before {
+  content: "\e92b";
+}
+.ascon-facebook:before {
+  content: "\e92c";
+}
+.ascon-facebook-inverse:before {
+  content: "\e92d";
+}
+.ascon-google-plus:before {
+  content: "\e92e";
+}
+.ascon-instagram:before {
+  content: "\e92f";
+}
+.ascon-instagram-inverse:before {
+  content: "\e930";
+}
+.ascon-kakao-story:before {
+  content: "\e931";
+}
+.ascon-kakao-story-inverse:before {
+  content: "\e932";
+}
+.ascon-kakao-talk:before {
+  content: "\e933";
+}
+.ascon-kakao-talk-inverse:before {
+  content: "\e934";
+}
+.ascon-linked-in:before {
+  content: "\e935";
+}
+.ascon-linked-in-inverse:before {
+  content: "\e936";
+}
+.ascon-naver:before {
+  content: "\e937";
+}
+.ascon-naver-inverse:before {
+  content: "\e938";
+}
+.ascon-naver-line:before {
+  content: "\e939";
+}
+.ascon-naver-line-inverse:before {
+  content: "\e93a";
+}
+.ascon-pinterest:before {
+  content: "\e93b";
+}
+.ascon-pinterest-inverse:before {
+  content: "\e93c";
+}
+.ascon-tumblr:before {
+  content: "\e93d";
+}
+.ascon-tumblr-inverse:before {
+  content: "\e93e";
+}
+.ascon-twitter:before {
+  content: "\e93f";
+}
+.ascon-twitter-inverse:before {
+  content: "\e940";
+}
+

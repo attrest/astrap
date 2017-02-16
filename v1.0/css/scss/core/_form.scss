@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	FORM
+*/
+.as-formgroup {
+	&.as-formgroup-small {
+		input, select, button {
+			height: $smallInputHeight;
+			font-size: 80%;
+			padding: 2px 8px;
+		}
+	}
+	&.as-formgroup-large {
+		input, select, button {
+			height: $largeInputHeight;
+			padding: 4px 16px;
+		}
+	}
+	&.as-formgroup-inline {
+		input, select, button {
+			display: inline-block;
+		}
+	}
+	&.as-formgroup-block {
+		input, select, button {
+			display: block;
+			width: 100%;
+			margin-top: 2px;
+			margin-bottom: 2px;
+		}
+		input[type="checkbox"], input[type="radio"] {
+			display: inline-block !important;
+			width: auto !important;
+		}
+	}
+	&.as-formgroup-col {
+		@for $i from 2 through 10 {
+			&-#{$i} {
+				@include clearBoth;
+				.as-formbox {
+					float: left;
+					width: calc(99.99999% / #{$i});
+					padding: 0 2px;
+					input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"] {
+						float: left;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+.as-form {
+	font-family: "Noto Sans KR", "Nanum Gothic", sans-serif;
+	font-size: .9rem;
+	font-weight: inherit;
+	height: $defaultInputHeight;
+	vertical-align: middle;
+	border-color: #ddd;
+	&.as-form-block {
+		display: block;
+		width: 100%;
+	}
+	&.as-form-large {
+		font-size: 1rem;
+		height: $largeInputHeight;
+	}
+	&.as-form-small {
+		height: $smallInputHeight;
+		font-size: 80%;
+	}
+	&:disabled {
+		color: #ccc;
+		background-color: #f5f5f5;
+	}
+	&[type="text"]:read-only, &[type="email"]:read-only, &[type="url"]:read-only, &[type="password"]:read-only, &[type="search"]:read-only {
+		color: $defaultGrayLight;
+		background-color: #f5f5f5;
+	}
+	&[type="checkbox"], &[type="radio"] {
+		height: 1em;
+	}
+
+}
+textarea.as-form {
+	padding: $defaultPaddingVertical $defaultPaddingHorizontal;
+}
+.as-formbox {
+	input[type="checkbox"], input[type="radio"] {
+		display: inline-block !important;
+		margin-top: .2em;
+	}
+	&.as-formbox-block {
+		input, textarea {
+			display: block;
+			width: 100%;
+		}
+	}
+	&.as-formbox-inline {
+		display: inline-block;
+		margin-right: .4em;
+	}
+	&.as-formbox-vertical {
+		display: block;
+	}
+	&.as-formbox-error, &.as-formbox-warning, &.as-formbox-success {
+		@include formState;
+	}
+	&.as-formbox-error {
+		input {
+			color: $defaultRed;
+			border-color: $defaultRed;
+		}
+		&:after {
+			@include formStateContent(error);
+		}
+	}
+	&.as-formbox-warning {
+		&:after {
+			@include formStateContent(warning);
+		}
+	}
+	&.as-formbox-success {
+		&:after {
+			@include formStateContent(success);
+		}
+	}
+}/* as-formbox */

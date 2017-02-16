@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	ETC
+*/
+.as {
+	&-pointer {
+		cursor: pointer;
+	}
+	&-select-none {
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	&-focus-none {
+		input[type="button"]:focus,
+		input[type="checkbox"]:focus,
+		input[type="radio"]:focus,
+		button:focus,
+		select:focus {
+			outline: 0;
+		}
+	}
+}

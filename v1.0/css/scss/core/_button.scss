@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	BUTTON
+*/
+.as-button {
+	display: inline-block;
+	padding: $buttonPaddingTopBottom $buttonPaddingLeftRight;
+	margin-bottom:0;
+	color: #fff;
+	line-height:1.4;
+	text-align:center;
+	white-space:nowrap;
+	vertical-align:middle;
+	-ms-touch-action:manipulation;
+	touch-action:manipulation;
+	cursor:pointer;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	border-radius:4px;
+	background-color: $asBlueLight;
+	border-color: transparent;
+	font-size: $buttonFontSize;
+	&:hover, &:active {
+		background-color: $asBlue;
+		border-color: transparent;
+	}
+	&.as-button-xs {
+		font-size: $buttonFontSize * 0.8;
+		padding: .2em $buttonPaddingLeftRight;
+	}
+	&.as-button-small {
+		font-size: $buttonFontSize * 0.9;
+		padding: .3em $buttonPaddingLeftRight;
+	}
+	&.as-button-large {
+		font-size: $buttonFontSize * 1.1;
+		padding: .6em $buttonPaddingLeftRight;
+	}
+	&.as-button-xl {
+		font-size: $buttonFontSize * 1.2;
+		padding: .8em $buttonPaddingLeftRight;
+	}
+	&.as-button-short, &.as-button-short-circle {
+		position: relative;
+		@include textHide;
+		&:before {
+			@include setAscon;
+			@include positionAlign;
+			text-indent: 0;
+			font-size: 1em;
+			color: #fff;
+		}
+		&.as-button-line,
+		&.as-button-mute {
+			&:before {
+				color: inherit;
+			}
+		}
+		&.as-button-short-circle {
+			border-radius: 50%;
+		}
+		&.as-button-xs:before, &.as-button-small:before {
+			font-size: 18px;
+		}
+		&.as-i-arrow-top {
+			&:before {
+				content: $iArrowTop;
+			}
+		}
+		&.as-i-arrow-right {
+			&:before {
+				content: $iArrowRight;
+			}
+		}
+		&.as-i-arrow-bottom {
+			&:before {
+				content: $iArrowBottom;
+			}
+		}
+		&.as-i-arrow-left {
+			&:before {
+				content: $iArrowLeft;
+			}
+		}
+		&.as-i-close {
+			&:before {
+				content: $iClose;
+			}
+		}
+		&.as-i-menu {
+			&:before {
+				content: $iMenu;
+			}
+		}
+		&.as-i-plus {
+			&:before {
+				content: $iPlus;
+			}
+		}
+		&.as-i-minus {
+			&:before {
+				content: $iMinus;
+			}
+		}
+		&.as-i-search {
+			&:before {
+				content: $iSearch;
+			}
+		}
+		&.as-i-share {
+			&:before {
+				content: $iShare;
+			}
+		}
+	}
+	&.as-button-line {
+		background-color: transparent;
+		border: 1px solid $asMute;
+		color: inherit;
+		&:hover, &:active {
+			border-color: $defaultGrayDark;
+		}
+	}
+	&.as-button-gray {
+		background-color: $defaultGrayMedium;
+		border-color: $defaultGrayMedium;
+		color: #fff;
+		&:hover, &:active {
+			background-color: $defaultGrayDark;
+			border-color: $defaultGrayDark;
+		}
+	}
+	&.as-button-black {
+		background-color: $defaultBlack;
+		border-color: $defaultBlack;
+		color: #fff;
+		&:hover, &:active {
+			background-color: $defaultGrayDark;
+			border-color: $defaultGrayDark;
+		}
+	}
+	&.as-button-red {
+		background-color: $defaultRed;
+		border-color: $defaultRed;
+		color: #fff;
+		&:hover, &:active {
+			background-color: $deflultDeepRed;
+			border-color: $deflultDeepRed;
+		}
+	}
+	&.as-button-orange {
+		background-color: $defaultOrange;
+		border-color: $defaultOrange;
+		color: #fff;
+		&:hover, &:active {
+			background-color: $defaultDeepOrange;
+			border-color: $defaultDeepOrange;
+		}
+	}
+	&.as-button-green {
+		background-color: $defaultGreen;
+		border-color: $defaultGreen;
+		color: #fff;
+		&:hover, &:active {
+			background-color: $defaultDeepGreen;
+			border-color: $defaultDeepGreen;
+		}
+	}
+	&.as-button-blue {
+		background-color: $defaultBlue;
+		border-color: $defaultBlue;
+		color: #fff;
+		&:hover, &:active {
+			background-color: $defaultDeepBlue;
+			border-color: $defaultDeepBlue;
+		}
+	}
+	&.as-button-mute {
+		background-color: $asMute;
+		border-color: $asMute;
+		color: $defaultGrayMedium;
+		cursor: default;
+	}
+	&.as-button-block {
+		display: block;
+		width: 100%;
+	}
+	&.as-button-close, &.as-button-close-fixed {
+		position: absolute;
+		top: .5rem;
+		right: .5rem;
+		width: 1.3em;
+		height: 1.3em;
+		padding: 0;
+		background: transparent;
+		@include textHide;
+		&:before {
+			content: $iClose;
+			position: absolute;
+			top: 0;
+			right: 0;
+			text-indent: 0;
+			font-size: 1.2em;
+			color: $defaultBlack;
+			@include setAscon;
+		}
+		&.as-button-close-fixed {
+			position: fixed;
+		}
+	}
+}

@@ -1,0 +1,67 @@
+﻿@charset "utf-8";
+@import url("../ascon/ascon.css");
+
+/*
+ * Pub Date : 2017-01-05
+ * Version : v1.0
+ * License : MIT License (https://opensource.org/licenses/MIT)
+ * Author: attrest(http://www.attrest.com)
+ */
+
+/*
+ *  Import Scss Files
+ *  0. RESET
+ *  1. GRID
+ *  2. TITLE
+ *  3. ARTICLE
+ *  4. LIST
+ *  5. TABLE
+ *  6. FORM
+ *  7. BUTTON
+ *  8. BOX ELEMENT
+ *  9. CONTEXT
+ *  10. VISIBILITY
+ *  11. RADIUS
+ *  12. ALIGN
+ *  13. POSITION
+ *  14. OVERFLOW
+ *  15. MARGIN
+ *  16. PADDING
+ *  17. ACCESSIBILITY
+ *  18. PRINT
+ *  19. ANIMATION
+ *  20. ETC
+ */
+@import "core/_reset.scss";
+@import "core/_grid.scss";
+@import "core/_title.scss";
+@import "core/_article.scss";
+@import "core/_list.scss";
+@import "core/_table.scss";
+@import "core/_form.scss";
+@import "core/_button.scss";
+@import "core/_box.scss";
+@import "core/_context.scss";
+@import "core/_visibility.scss";
+@import "core/_radius.scss";
+@import "core/_align.scss";
+@import "core/_position.scss";
+@import "core/_overflow.scss";
+@import "core/_margin.scss";
+@import "core/_padding.scss";
+@import "core/_accessibility.scss";
+@import "core/_print.scss";
+@import "core/_animation.scss";
+@import "core/_etc.scss";
+
+/*
+ *	Default Font Style Set
+ */
+body {
+	font-family: "Noto Sans KR", "Nanum Gothic", sans-serif;
+	font-size: $defaultFontSize;
+	font-weight: 300; /* Noto Sans: 100, 300, 400, 500, 700, 900 || Nanum Gothic: 400, 700, 800 */
+	line-height: 1.8;
+	-webkit-font-smoothing: antialiased;
+	color: $defaultBlack;
+}

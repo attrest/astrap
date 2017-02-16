@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	OVERFLOW
+*/
+.as-overflow {
+	overflow: auto;
+	padding: .2em .5em;
+	&-x {
+		overflow-x: scroll;
+	}
+	&-y {
+		overflow-y: scroll;
+	}
+	&-hidden {
+		overflow: hidden;
+	}
+	@for $i from 1 through 5 {
+		&-#{$i * 10}x {
+			height: 100px * $i;
+		}
+	}
+}

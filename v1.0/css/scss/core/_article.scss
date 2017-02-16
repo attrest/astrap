@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	ARTICLE
+*/
+.as {
+	&-readability {
+		font-size: $readabilityFontSize;
+	}
+	&-drop-cap {
+		&::first-letter {
+			float: left;
+			font-size: 3.2rem;
+			line-height: 1.1;
+			padding-right: 8px;
+			padding-left: 3px;
+		}
+	}
+	&-text-indent {
+		text-indent: 8rem;
+	}
+	&-lowercase {
+		text-transform: lowercase;
+	}
+	&-uppercase {
+		text-transform: uppercase;
+	}
+	&-capitalize {
+		text-transform: capitalize;
+	}
+	&-initial {
+		font-size: 90%;
+		text-transform: uppercase;
+	}
+	&-description {
+		font-size: 90%;
+		color: $defaultGrayMedium;
+	}
+	&-small {
+		font-size: 80%;
+	}
+	&-help {
+		font-size: 80%;
+		color: $defaultGrayDark;
+	}
+	&-footnote {
+		font-size: 80%;
+		font-weight: 100;
+		color: $defaultGrayLight;
+		strong, em {
+			color: $defaultGrayMedium;
+		}
+	}
+	&-underline {
+		display: inline-block;
+		line-height: 1;
+		border-bottom: 1px solid $defaultGrayLight;
+		border-color: inherit;
+	}
+	&-underline-dashed {
+		display: inline-block;
+		line-height: 1;
+		border-bottom: 1px dashed $defaultGrayLight;
+		border-color: inherit;
+	}
+	&-underline-dotted {
+		display: inline-block;
+		line-height: 1;
+		border-bottom: 1px dotted $defaultGrayLight;
+		border-color: inherit;
+	}
+	&-paragraph {
+		display: block;
+		margin-bottom: 2em;
+		word-break: break-all;
+	}
+	&-blockquote {
+		position: relative;
+		padding-left: $blockquotePadding;
+		margin: 2.6em 1.2em 2.6em 2.4em;
+		&:before {
+			content: "";
+			position: absolute;
+			top: .4em;
+			left: 0;
+			bottom: .2em;
+			width: 2px;
+			background-color: $defaultGrayLight;
+		}
+		&.as-blockquote-inverse {
+			padding-left: 0;
+			padding-right: $blockquotePadding;
+			text-align: right;
+			&:before {
+				left: auto;
+				right: 0;
+			}
+		}
+		&.as-blockquote-center {
+			padding-left: 0;
+			text-align: center;
+			&:before {
+				display: none;
+			}
+		}
+		p {
+			color: $defaultGrayDark;
+		}
+		footer {
+			color: $defaultGrayLight;
+			font-size: 80%;
+			font-style: italic;
+			margin-top: .6em;
+			cite {
+				color: $defaultGrayDark;
+			}
+			a:hover {
+				border-bottom: 1px dotted $defaultGrayLight;
+			}
+		}
+	}
+}

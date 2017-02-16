@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	MARGIN
+*/
+.as-margin {
+	&-auto {
+		margin: 0 auto !important;
+	}
+	&-none {
+		margin: 0 !important;
+	}
+	&-top {
+		&-none {
+			margin-top: 0 !important;
+		}
+		@for $i from 1 through 10 {
+			&-#{$i} {
+				margin-top: 0px + $i !important;
+			}
+			&-#{$i}x {
+				margin-top: 10px * $i !important;
+			}
+		}
+	}
+	&-bottom {
+		&-none {
+			margin-bottom: 0 !important;
+		}
+		@for $i from 1 through 10 {
+			&-#{$i} {
+				margin-bottom: 0px + $i !important;
+			}
+			&-#{$i}x {
+				margin-bottom: 10px * $i !important;
+			}
+		}
+	}
+	&-left {
+		&-none {
+			margin-left: 0 !important;
+		}
+		@for $i from 1 through 10 {
+			&-#{$i} {
+				margin-left: 0px + $i !important;
+			}
+			&-#{$i}x {
+				margin-left: 10px * $i !important;
+			}
+		}
+	}
+	&-right {
+		&-none {
+			margin-right: 0 !important;
+		}
+		@for $i from 1 through 10 {
+			&-#{$i} {
+				margin-right: 0px + $i !important;
+			}
+			&-#{$i}x {
+				margin-right: 10px * $i !important;
+			}
+		}
+	}
+}
