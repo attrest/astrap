@@ -12,7 +12,7 @@
 	padding: $buttonPaddingTopBottom $buttonPaddingLeftRight;
 	margin-bottom:0;
 	color: #fff;
-	line-height:1.4;
+	line-height:1;
 	text-align:center;
 	white-space:nowrap;
 	vertical-align:middle;
@@ -33,19 +33,19 @@
 	}
 	&.as-button-xs {
 		font-size: $buttonFontSize * 0.8;
-		padding: .2em $buttonPaddingLeftRight;
+		padding: .3em ($buttonPaddingLeftRight / 1.5);
 	}
 	&.as-button-small {
 		font-size: $buttonFontSize * 0.9;
-		padding: .3em $buttonPaddingLeftRight;
+		padding: .4em ($buttonPaddingLeftRight / 1.2);
 	}
 	&.as-button-large {
 		font-size: $buttonFontSize * 1.1;
-		padding: .6em $buttonPaddingLeftRight;
+		padding: .8em $buttonPaddingLeftRight;
 	}
 	&.as-button-xl {
 		font-size: $buttonFontSize * 1.2;
-		padding: .8em $buttonPaddingLeftRight;
+		padding: 1em $buttonPaddingLeftRight;
 	}
 	&.as-button-short, &.as-button-short-circle {
 		position: relative;

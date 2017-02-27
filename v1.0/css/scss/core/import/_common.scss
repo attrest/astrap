@@ -36,6 +36,7 @@ $asSuccess: #40e184;/* green */
 $asActive: #3186e3;/* blue */
 $asMute: #ccc;/* gray */
 $asImportant: #ff4c4c;/* light red */
+$asMark: #fbf5cf;
 
 $defaultGrayLight: #a6a6a6;
 $defaultGrayMedium: #9f9f9f;
@@ -59,7 +60,6 @@ $responsiveBreakpointMin: 620px;
 
 /* Font */
 $defaultFontSize: 1rem;
-$readabilityFontSize: 1.15rem;
 $defaultFontWeight: 300;
 $defaultFontWeightBold: 400;
 $defaultTitSize: 1.6rem;
@@ -78,7 +78,6 @@ $blockquotePadding: .8em;
     margin-top: .75em;
     margin-bottom: .25em;
 }
-
 
 /* Table */
 $tableBorder: #eee;
@@ -144,6 +143,9 @@ $smallInputHeight: 1.6rem;
 }
 
 /* Button */
-$buttonFontSize: .8rem;
-$buttonPaddingTopBottom: .4em;
+$buttonFontSize: .85rem;
+$buttonPaddingTopBottom: .6em;
 $buttonPaddingLeftRight: 1.2em;
+
+/* List */
+$listNumPadding: 1.5em;

@@ -19,12 +19,8 @@
 		user-select: none;
 	}
 	&-focus-none {
-		input[type="button"]:focus,
-		input[type="checkbox"]:focus,
-		input[type="radio"]:focus,
-		button:focus,
-		select:focus {
-			outline: 0;
+		:focus, &:focus {
+			box-shadow: none;
 		}
 	}
 }

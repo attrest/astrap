@@ -113,7 +113,7 @@ h1 {
  * IE 8/9에서 존재하지 않는 스타일 추가
  */
 mark {
-	background: #ff0;
+	background: $asMark;
 	color: #000;
 }
 
@@ -375,7 +375,7 @@ hr {
 	background-color: #e5e5e5;
 	border: 0;
 	height: 1px;
-	margin: 1.5em 0;
+	margin: 1em 0;
 	clear: both;
 }
 
@@ -442,8 +442,7 @@ input[type="submit"] {
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	font-size: 90%;
-	padding-left: 12px;
-	padding-right: 12px;
+	padding: 0 .5em;
 	vertical-align: middle;
 	&:hover, &:active {
 		border-color: #a6a6a6;
@@ -499,19 +498,6 @@ label {
 	padding-right: $labelPadding;
 }
 
-:focus {
-	outline: none;
-}
-
-/* 웹 접근성을 위한 포커스 표시 */
-input[type="button"]:focus,
-input[type="checkbox"]:focus,
-input[type="radio"]:focus,
-button:focus,
-select:focus {
-	outline: 1px dotted #a6a6a6;
-}
-
 /* 선택 된 영역의 배경색상 지정 */
 ::selection  { background:#ddd; }
 ::-moz-selection { background: #e2eae2; }
@@ -527,4 +513,9 @@ label[for],
 select,
 button {
 		cursor: pointer;
+}
+
+:focus {
+	outline: none;
+	box-shadow: inset 0 0 6em $asMark;
 }

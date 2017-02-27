@@ -1,0 +1,169 @@
+/*
+ * Wave Pattern
+ */
+@mixin patternWave($bgColor: #000, $color: #222, $size: 2em) {
+	background: linear-gradient(135deg, $color 25%, transparent 25%) -50px 0,
+	linear-gradient(225deg, $color 25%, transparent 25%) -50px 0,
+	linear-gradient(315deg, $color 25%, transparent 25%),
+	linear-gradient(45deg, $color 25%, transparent 25%);
+	background-color: $bgColor;
+	background-size: $size $size;
+}
+
+/*
+ * Dot Pattern
+ */
+@mixin patternDot($bgColor: #000, $color: #333, $size: 10px) {
+	background-image: repeating-radial-gradient(circle, $color, $color 45%, transparent 45%,transparent 60%, $color 60%,$color 100%);
+	background-color: $bgColor;
+	background-size: $size $size;
+}
+
+/*
+ * Dot Pattern 2
+ */
+@mixin patternDot2($bgColor: #000, $color: #333, $size: 2em) {
+	background-image: radial-gradient($color 15%, transparent 16%), radial-gradient($color 15%, transparent 16%);
+	background-color: $bgColor;
+	background-size: $size $size;
+	background-position: 0 0, $size/2 $size/2;
+}
+
+/*
+ * Star Pattern
+ */
+@mixin patternStar($bgColor: #000, $color: #333) {
+	background: linear-gradient(324deg, $bgColor 4%,   transparent 4%) -70px 43px, linear-gradient( 36deg, $bgColor 4%,   transparent 4%) 30px 43px, linear-gradient( 72deg, $color 8.5%, transparent 8.5%) 30px 43px, linear-gradient(288deg, $color 8.5%, transparent 8.5%) -70px 43px, linear-gradient(216deg, $color 7.5%, transparent 7.5%) -70px 23px, linear-gradient(144deg, $color 7.5%, transparent 7.5%) 30px 23px, linear-gradient(324deg, $bgColor 4%,   transparent 4%) -20px 93px, linear-gradient( 36deg, $bgColor 4%,   transparent 4%) 80px 93px, linear-gradient( 72deg, $color 8.5%, transparent 8.5%) 80px 93px, linear-gradient(288deg, $color 8.5%, transparent 8.5%) -20px 93px, linear-gradient(216deg, $color 7.5%, transparent 7.5%) -20px 73px, linear-gradient(144deg, $color 7.5%, transparent 7.5%) 80px 73px;
+	background-color: $bgColor;
+	background-size: 100px 100px;
+}
+
+/*
+ * Horizontal Line
+ */
+@mixin patternHorizontal($bgColor: #000, $color: #333, $size: 2em) {
+	background-image: linear-gradient(transparent 50%, $color 50%);
+	background-color: $bgColor;
+	background-size: $size $size;
+}
+
+/*
+ * Vertical Line
+ */
+@mixin patternVertical($color1: #000, $color2: #333, $size: 2em) {
+	background-image: linear-gradient(to right, $color1, $color1 50%, $color2 0, $color2);
+	background-size: $size $size;
+}
+
+/*
+ * Mixed Vertical Line
+ */
+@mixin patternMixedVertical($color1: #000, $color2: #333, $size: 2em) {
+	background-image: repeating-linear-gradient(90deg, $color1 0, $color1 20%, $color2 0, $color2 70%);
+	background-size: $size $size;
+}
+
+/*
+ * Royal Vertical Line
+ */
+@mixin patternRoyalVertical($color1: #000, $color2: #333, $size: 2em) {
+	background-image: repeating-linear-gradient(-70deg, $color1 0, $color1 25%, $color2 0, $color2 40%);
+	background-size: $size $size/4;
+}
+
+/*
+ * Triangle Box Pattern
+ */
+@mixin patternTribox($color1: #000, $color2: #333, $size: 2em) {
+	background-image: repeating-linear-gradient(45deg, $color1, $color1 50%, $color2 50%, $color2);
+	background-size: $size $size;
+}
+
+/*
+ * Diagonal Line
+ */
+@mixin patternDiagonal($color1: #000, $color2: #333, $size: 2em) {
+	background-image: repeating-linear-gradient(45deg, $color1, $color1 $size/2, $color2 $size/2, $color2 50%);
+	background-size: $size $size;
+}
+
+/*
+ * Thin Diagonal Line
+ */
+@mixin patternThinDiagonal($color1: #000, $color2: #333, $size: 2em) {
+	background-image: repeating-linear-gradient(45deg, $color1 0, $color1 1px, $color2 0, $color2 50%);
+	background-size: $size $size;
+}
+
+/*
+ * Royal Diagonal Line
+ */
+@mixin patternRoyalDiagonal($color1: #000, $color2: #333, $size: 2em) {
+	background-image: repeating-linear-gradient(-45deg, $color1 0, $color1 25%, $color2 0, $color2 38%);
+	background-size: $size $size;
+}
+
+/*
+ * Justified Diagonal Line
+ */
+@mixin patternJustifiedDiagonal($color1: #000, $color2: #222, $color3: #333, $size: 2em) {
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 1em, $color1 1em, $color1 50%), repeating-linear-gradient(45deg, $color2, $color2 1em, $color3 1em, $color3 50%);
+	background-size: $size $size;
+}
+
+/*
+ * Grid
+ */
+@mixin patternGrid($bgColor: #333, $color: #000, $size: 2em) {
+	background-image: repeating-linear-gradient(90deg, $color 0, $color 1px, transparent 0, transparent 50%),repeating-linear-gradient(180deg, $color 0, $color 1px, transparent 0, transparent 50%);
+	background-color: $bgColor;
+	background-size: $size $size;
+}
+
+/*
+ * Diagonal Grid
+ */
+@mixin patternDiagonalGrid($bgColor: #000, $color: #333, $size: 2em, $bgSize: 100%) {
+	background-image: repeating-linear-gradient(45deg, $color 0, $color 1px, transparent 0, transparent $size ), repeating-linear-gradient(-45deg, $color 0, $color 1px, transparent 0, transparent $size );
+	background-color: $bgColor;
+	background-size: $bgSize $bgSize;
+}
+
+/*
+ * Tile Pattern
+ */
+@mixin patternTile($bgColor: #000, $color: #333, $size: 60px) {
+	background-image: linear-gradient(45deg, $color 25%, transparent 25%, transparent 75%, $color 75%, $color), linear-gradient(45deg, $color 25%, transparent 25%, transparent 75%, $color 75%, $color);
+	background-color: $bgColor;
+	background-size: $size $size;
+	background-position: 0 0, $size/2 $size/2;
+}
+
+/*
+ * Carbon Pattern
+ */
+@mixin patternCarbon($bgColor: #131313, $color1: #151515, $color2: #212121, $color3: #1b1b1b, $color4: #1a1a1a, $color5: #242424) {
+	background: linear-gradient(27deg, $color1 5px, transparent 5px) 0 5px, linear-gradient(207deg, $color1 5px, transparent 5px) 10px 0px, linear-gradient(27deg, $color2 5px, transparent 5px) 0px 10px, linear-gradient(207deg, $color2 5px, transparent 5px) 10px 5px, linear-gradient(90deg, $color3 10px, transparent 10px), linear-gradient($color3 25%, $color4 25%, $color4 50%, transparent 50%, transparent 75%, $color5 75%, $color5);
+	background-color: $bgColor;
+	background-size: 1em 1em;
+}
+
+/*
+ * Hounds Tooth Pattern
+ */
+@mixin patternHoundsTooth($bgColor: #333, $color1: #000) {
+	background: linear-gradient(-45deg, $bgColor 25%, transparent 25%, transparent 75%, $color1 75%, $color1) 0 0, linear-gradient(-45deg, $color1 25%, transparent 25%, transparent 75%, $bgColor 75%, $bgColor) 0.75em 0.75em, linear-gradient(45deg, $color1 17%, transparent 17%, transparent 25%, $color1 25%, $color1 36%, transparent 36%, transparent 64%, $color1 64%, $color1 75%, transparent 75%, transparent 83%, $color1 83%) 0.75em 0.75em;
+	background-color: $bgColor;
+	background-size: 1.5em 1.5em;
+}
+
+/*
+ * 3D Box Pattern
+ */
+@mixin pattern3dbox($color1: #000, $color2: #111, $color3: #222, $color4: #333, $color5: #3e3e3e, $size: 40px) {
+	background: linear-gradient(30deg, $color1 12%, transparent 12.5%, transparent 87%, $color1 87.5%, $color1 0), linear-gradient(150deg, $color1 12%, transparent 12.5%, transparent 87%, $color1 87.5%, $color1 0), linear-gradient(30deg, $color1 12%, transparent 12.5%, transparent 87%, $color1 87.5%, $color1 0), linear-gradient(150deg, $color1 12%, transparent 12.5%, transparent 87%, $color1 87.5%, $color1 0), linear-gradient(60deg, $color2 0, $color3 25%, transparent 25.5%, transparent 75%, $color3 75%, $color3 100%), linear-gradient(60deg, $color4 0, $color3 25%, transparent 25.5%, transparent 75%, $color3 75%, $color3 100%), $color5;
+	background-position: 0 0, 0 0, $size/2 $size, $size/2 $size, 0 0, $size/2 $size;
+	background-origin: padding-box;
+	background-size: $size $size*2;
+	background-clip: border-box;
+}

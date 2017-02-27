@@ -9,20 +9,92 @@
 */
 .as-list {
 	list-style: none;
-	margin-left: $layoutMarginHorizontal;
 	li {
 		position: relative;
-		margin-bottom: 1em;
 		&:before {
 			content: "";
 			position: absolute;
-			top: 50%;
+			top: 0;
 			left: 0;
-			transform: translateY(-50%);
 		}
 	}
 	&.as-list-number {
-		list-style: decimal;
+		counter-reset: as-list-number-counter;
+		li {
+			padding-left: $listNumPadding * 1.25;
+			&:before {
+				content: counter(as-list-number-counter)".";
+				counter-increment: as-list-number-counter;
+				display: inline-block;
+				width: $listNumPadding;
+				text-align: right;
+			}
+		}
+		&-bracket {
+			counter-reset: as-list-number-counter;
+			li {
+				padding-left: $listNumPadding * 1.25;
+				&:before {
+					content: "(" counter(as-list-number-counter) ")";
+					counter-increment: as-list-number-counter;
+					display: inline-block;
+					width: $listNumPadding;
+					text-align: right;
+				}
+			}
+		}
+		&-lower {
+			counter-reset: as-list-number-counter;
+			li {
+				padding-left: $listNumPadding;
+				&:before {
+					content: counter(as-list-number-counter, lower-alpha)".";
+					counter-increment: as-list-number-counter;
+					display: inline-block;
+					width: $listNumPadding / 1.2;
+					text-align: right;
+				}
+			}
+		}
+		&-upper {
+			counter-reset: as-list-number-counter;
+			li {
+				padding-left: $listNumPadding;
+				&:before {
+					content: counter(as-list-number-counter, upper-alpha)".";
+					counter-increment: as-list-number-counter;
+					display: inline-block;
+					width: $listNumPadding / 1.2;
+					text-align: right;
+				}
+			}
+		}
+		&-lower-roman {
+			counter-reset: as-list-number-counter;
+			li {
+				padding-left: $listNumPadding * 1.25;
+				&:before {
+					content: counter(as-list-number-counter, lower-roman)".";
+					counter-increment: as-list-number-counter;
+					display: inline-block;
+					width: $listNumPadding;
+					text-align: right;
+				}
+			}
+		}
+		&-upper-roman {
+			counter-reset: as-list-number-counter;
+			li {
+				padding-left: $listNumPadding * 1.25;
+				&:before {
+					content: counter(as-list-number-counter, upper-roman)".";
+					counter-increment: as-list-number-counter;
+					display: inline-block;
+					width: $listNumPadding;
+					text-align: right;
+				}
+			}
+		}
 	}
 	&.as-list-circle,
 	&.as-list-square {

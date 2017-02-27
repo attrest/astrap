@@ -299,31 +299,34 @@
 		*/
 		scrollEndCheck: function(targetElem, fn, option){
 			var targetElem = targetElem,
-						isWindow = targetElem.height() == $(window).height();
+				isWindow = ( targetElem.height() == $(window).height() );
 			var options = $.extend({
 				delay: 250,
-				correct: 0.2
+				correct: 0.2,
+				onScroll: function(){}
 			}, option);
 
 			targetElem.bind('scroll', function(){
 				var st = targetElem.scrollTop();
 				targetElem.scrollEndCheckEvent;
-
-				targetElem.scroll( function(){
-					clearTimeout( targetElem.scrollEndCheckEvent );
-					targetElem.scrollEndCheckEvent = setTimeout( function(){
-						if(!isWindow) {
-							if (targetElem[0].scrollHeight - targetElem.scrollTop() <= targetElem.outerHeight() + options.correct) {
-								fn();
-								//console.log(options.delay);
-							}
+				//console.log( isWindow );
+				//console.log( ($(document).height() - $(window).height()) + '::' + (st + options.correct) );
+				clearTimeout( targetElem.scrollEndCheckEvent );
+				targetElem.scrollEndCheckEvent = setTimeout( function(){
+					if(!isWindow) {
+						if (targetElem[0].scrollHeight - targetElem.scrollTop() <= targetElem.outerHeight() + options.correct) {
+							fn();
 						} else {
-							if ($(document).height() - $(window).height() <= st + options.correct) {
-								fn();
-							}
+							options.onScroll();
 						}
-					}, options.delay );
-				} );
+					} else {
+						if ($(document).height() - $(window).height() <= st + options.correct) {
+							fn();
+						} else {
+							options.onScroll();
+						}
+					}
+				}, options.delay );
 			});
 		},
 

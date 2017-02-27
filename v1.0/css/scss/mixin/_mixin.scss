@@ -40,7 +40,7 @@ $asBlue: #22b3d1;
 	}
 }
 
-@mixin radialGradient($shape: circle, $pos: center, $colorStep: $asBlueLight 0%, $endColor: $asBlue, $preset: default) {
+@mixin radialGradient($shape: circle, $pos: center, $colorStep: '$asBlueLight 0%', $endColor: $asBlue, $preset: default) {
 	@if $preset == night {
 		background: $endColor;
 		background: -webkit-radial-gradient($shape at bottom, #1b2735 0%, #090a0f 100%);

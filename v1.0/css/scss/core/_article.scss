@@ -9,7 +9,7 @@
 */
 .as {
 	&-readability {
-		font-size: $readabilityFontSize;
+		font-size: $defaultFontSize * 1.25;
 	}
 	&-drop-cap {
 		&::first-letter {
@@ -56,10 +56,7 @@
 		}
 	}
 	&-underline {
-		display: inline-block;
-		line-height: 1;
-		border-bottom: 1px solid $defaultGrayLight;
-		border-color: inherit;
+		text-decoration: underline;
 	}
 	&-underline-dashed {
 		display: inline-block;

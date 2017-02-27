@@ -7,7 +7,7 @@
 /*=================================================
 	ACCESSIBILITY
 */
-.as-accessibility-link {
+.as-accessibility {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -29,8 +29,8 @@
 		padding: .15em .5em;
 		margin: 0;
 		z-index: 99999;
-		background: #f8f8f8;
-		border: 1px solid #ddd;
+		/* background: #f8f8f8; */
+		/* border: 1px solid #ddd; */
 		border-radius: .3em;
 		font-size: .8rem;
 	}
