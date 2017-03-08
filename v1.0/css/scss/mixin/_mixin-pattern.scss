@@ -107,7 +107,7 @@
  * Justified Diagonal Line
  */
 @mixin patternJustifiedDiagonal($color1: #000, $color2: #222, $color3: #333, $size: 2em) {
-	background-image: repeating-linear-gradient(-45deg, transparent, transparent 1em, $color1 1em, $color1 50%), repeating-linear-gradient(45deg, $color2, $color2 1em, $color3 1em, $color3 50%);
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent $size/2, $color1 $size/2, $color1 50%), repeating-linear-gradient(45deg, $color2, $color2 $size/2, $color3 $size/2, $color3 50%);
 	background-size: $size $size;
 }
 
@@ -132,7 +132,7 @@
 /*
  * Tile Pattern
  */
-@mixin patternTile($bgColor: #000, $color: #333, $size: 60px) {
+@mixin patternTile($bgColor: #000, $color: #333, $size: 2em) {
 	background-image: linear-gradient(45deg, $color 25%, transparent 25%, transparent 75%, $color 75%, $color), linear-gradient(45deg, $color 25%, transparent 25%, transparent 75%, $color 75%, $color);
 	background-color: $bgColor;
 	background-size: $size $size;
@@ -151,8 +151,8 @@
 /*
  * Hounds Tooth Pattern
  */
-@mixin patternHoundsTooth($bgColor: #333, $color1: #000) {
-	background: linear-gradient(-45deg, $bgColor 25%, transparent 25%, transparent 75%, $color1 75%, $color1) 0 0, linear-gradient(-45deg, $color1 25%, transparent 25%, transparent 75%, $bgColor 75%, $bgColor) 0.75em 0.75em, linear-gradient(45deg, $color1 17%, transparent 17%, transparent 25%, $color1 25%, $color1 36%, transparent 36%, transparent 64%, $color1 64%, $color1 75%, transparent 75%, transparent 83%, $color1 83%) 0.75em 0.75em;
+@mixin patternHoundsTooth($bgColor: #333, $color: #000) {
+	background: linear-gradient(-45deg, $bgColor 25%, transparent 25%, transparent 75%, $color 75%, $color) 0 0, linear-gradient(-45deg, $color 25%, transparent 25%, transparent 75%, $bgColor 75%, $bgColor) 0.75em 0.75em, linear-gradient(45deg, $color 17%, transparent 17%, transparent 25%, $color 25%, $color 36%, transparent 36%, transparent 64%, $color 64%, $color 75%, transparent 75%, transparent 83%, $color 83%) 0.75em 0.75em;
 	background-color: $bgColor;
 	background-size: 1.5em 1.5em;
 }

@@ -9,7 +9,7 @@
 */
 .as {
 	&-readability {
-		font-size: $defaultFontSize * 1.25;
+		font-size: $defaultFontSize * 1.2;
 	}
 	&-drop-cap {
 		&::first-letter {
@@ -78,7 +78,7 @@
 	&-blockquote {
 		position: relative;
 		padding-left: $blockquotePadding;
-		margin: 2.6em 1.2em 2.6em 2.4em;
+		margin: 3em 0 3em 2em;
 		&:before {
 			content: "";
 			position: absolute;

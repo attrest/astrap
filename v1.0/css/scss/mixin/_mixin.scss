@@ -180,3 +180,15 @@ $asBlue: #22b3d1;
 		}
 	}
 }
+
+
+/*
+ * Color
+ */
+@mixin randomColor($property: background, $opacity: false) {
+  @if ($opacity == false) {
+    #{$property}: rgba( (random(255)),(random(255)),(random(255)), random() );
+  } @else {
+    #{$property}: rgba( (random(255)),(random(255)),(random(255)), 1 );
+  }
+};

@@ -491,6 +491,9 @@ select{ padding-right: .5em \0/IE9; }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { select { padding-right: 2.2em } }
 
 textarea {
+	font-size: 1em;
+	font-weight: 300;
+	font-family: "Noto Sans KR", "Nanum Gothic", sans-serif;
 	width: 100%;
 }
 

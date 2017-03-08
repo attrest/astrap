@@ -302,7 +302,7 @@
 				isWindow = ( targetElem.height() == $(window).height() );
 			var options = $.extend({
 				delay: 250,
-				correct: 0.2,
+				offset: 0.2,
 				onScroll: function(){}
 			}, option);
 
@@ -310,17 +310,17 @@
 				var st = targetElem.scrollTop();
 				targetElem.scrollEndCheckEvent;
 				//console.log( isWindow );
-				//console.log( ($(document).height() - $(window).height()) + '::' + (st + options.correct) );
+				//console.log( ($(document).height() - $(window).height()) + '::' + (st + options.offset) );
 				clearTimeout( targetElem.scrollEndCheckEvent );
 				targetElem.scrollEndCheckEvent = setTimeout( function(){
 					if(!isWindow) {
-						if (targetElem[0].scrollHeight - targetElem.scrollTop() <= targetElem.outerHeight() + options.correct) {
+						if (targetElem[0].scrollHeight - targetElem.scrollTop() <= targetElem.outerHeight() + options.offset) {
 							fn();
 						} else {
 							options.onScroll();
 						}
 					} else {
-						if ($(document).height() - $(window).height() <= st + options.correct) {
+						if ($(document).height() - $(window).height() <= st + options.offset) {
 							fn();
 						} else {
 							options.onScroll();

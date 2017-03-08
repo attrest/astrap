@@ -101,6 +101,7 @@
 		li {
 			padding-left: .8em;
 			&:before {
+				top: .8em;
 				width: 4px;
 				height: 4px;
 				background-color: $defaultGrayLight;
@@ -114,6 +115,7 @@
 		li {
 			padding-left: .8em;
 			&:before {
+				top: .9em;
 				width: 6px;
 				height: 1px;
 				background-color: $defaultGrayLight;
@@ -138,14 +140,13 @@
 		&:before {
 			content: "";
 			position: absolute;
-			top: 50%;
+			top: .8em;
 			left: 0;
-			transform: translateY(-50%);
 		}
 	}
 	&.as-dl-circle {
 		dd {
-			padding-left: .6em;
+			padding-left: .8em;
 			&:before {
 				width: 4px;
 				height: 4px;
@@ -156,7 +157,7 @@
 	}
 	&.as-dl-square {
 		dd {
-			padding-left: .6em;
+			padding-left: .8em;
 			&:before {
 				width: 4px;
 				height: 4px;
@@ -166,8 +167,9 @@
 	}
 	&.as-dl-dash {
 		dd {
-			padding-left: .6em;
+			padding-left: .8em;
 			&:before {
+				top: .9em;
 				width: 4px;
 				height: 1px;
 				background-color: $defaultGrayLight;
