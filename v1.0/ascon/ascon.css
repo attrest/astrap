@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'ascon';
   src:
-    url('fonts/ascon.ttf?ecmtda') format('truetype'),
-    url('fonts/ascon.woff?ecmtda') format('woff'),
-    url('fonts/ascon.svg?ecmtda#ascon') format('svg');
+    url('fonts/ascon.ttf?htjkuk') format('truetype'),
+    url('fonts/ascon.woff?htjkuk') format('woff'),
+    url('fonts/ascon.svg?htjkuk#ascon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -135,11 +135,11 @@
 .ascon-warning-line:before {
   content: "\e924";
 }
-.ascon-astrap:before {
-  content: "\e925";
-}
 .ascon-attrest:before {
   content: "\e926";
+}
+.ascon-attrest-simbol:before {
+  content: "\e925";
 }
 .ascon-browser-chrome:before {
   content: "\e927";
