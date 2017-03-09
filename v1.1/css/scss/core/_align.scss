@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	ALIGN
+*/
+.as-float {
+	&-left {
+		float: left;
+	}
+	&-right {
+		float: right;
+	}
+}
+.as-clear {
+	@include clearBoth;
+}
+.as-text {
+	&-center {
+		text-align: center;
+	}
+	&-left {
+		text-align: left;
+	}
+	&-right {
+		text-align: right;
+	}
+	&-justify {
+		text-align: justify;
+	}
+}
+.as-outer {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.as-inner {
+	display: table-cell;
+	vertical-align: middle;
+}

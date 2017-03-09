@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	ANIMATION
+*/
+@keyframes AsFadeIn {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes AsFadeOut {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes AsBlink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

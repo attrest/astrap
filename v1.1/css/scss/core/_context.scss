@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	CONTEXT
+*/
+.as {
+	/* context - background */
+	&-important {
+		background: $asImportant !important;
+		color: #fff;
+	}
+	&-active {
+		background: $asActive !important;
+		color: #fff;
+	}
+	&-success {
+		background: $asSuccess !important;
+		color: #fff;
+	}
+	&-info {
+		background: $asInfo !important;
+		color: #fff;
+	}
+	&-warning {
+		background: $asWarning !important;
+		color: #fff;
+	}
+	&-danger {
+		background: $asDanger !important;
+		color: #fff;
+	}
+	&-muted {
+		background: $asMute !important;
+		color: #9f9f9f;
+	}
+	/* context - text */
+	&-important-text {
+		color: $asImportant !important;
+	}
+	&-active-text {
+		color: $asActive !important;
+	}
+	&-success-text {
+		color: $asSuccess !important;
+	}
+	&-info-text {
+		color: $asInfo !important;
+	}
+	&-warning-text {
+		color: $asWarning !important;
+	}
+	&-danger-text {
+		color: $asDanger !important;
+	}
+	&-muted-text {
+		color: $asMute !important;
+	}
+}

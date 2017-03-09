@@ -1,0 +1,151 @@
+/* Ascon */
+$iArrowTop: "\e906";
+$iArrowRight: "\e904";
+$iArrowBottom: "\e900";
+$iArrowLeft: "\e902";
+$iWarning: "\e94e";
+$iError: "\e94a";
+$iCheck: "\e910";
+$iClose: "\e912";
+$iMenu: "\e90a";
+$iPlus: "\e90c";
+$iMinus: "\e90e";
+$iSearch: "\e959";
+$iShare: "\e953";
+
+@mixin setAscon {
+    font-family: 'ascon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Color */
+$asBlueLight: #3dcce5;
+$asBlue: #22b3d1;
+$asDanger: #e02121;/* red */
+$asError: #d41313;/* deep red */
+$asWarning: #ff6725;/* orange */
+$asInfo: #b386ff;/* purple */
+$asSuccess: #40e184;/* green */
+$asActive: #3186e3;/* blue */
+$asMute: #ccc;/* gray */
+$asImportant: #ff4c4c;/* light red */
+$asMark: #fbf5cf;
+
+$defaultGrayLight: #a6a6a6;
+$defaultGrayMedium: #9f9f9f;
+$defaultGrayDark: #555;
+$defaultBlack: #333;
+$defaultRed: #e02121;
+$deflultDeepRed: #d41313;
+$defaultOrange: #ff6725;
+$defaultDeepOrange: #f95b15;
+$defaultGreen: #40e184;
+$defaultDeepGreen: #2fb567;
+$defaultBlue: #3186e3;
+$defaultDeepBlue: #186cc7;
+
+/* Layout */
+$fixedWidth: 1000px;
+$responsiveBreakpointFull: 1201px;
+$responsiveBreakpointMax: 1200px;
+$responsiveBreakpointMid: 860px;
+$responsiveBreakpointMin: 620px;
+
+/* Font */
+$defaultFontSize: 1rem;
+$defaultFontWeight: 300;
+$defaultFontWeightBold: 400;
+$defaultTitSize: 1.6rem;
+$defaultTitLineHeight: 1.25em;
+
+/* Padding */
+$defaultPadding: 40px;
+$defaultPaddingHorizontal: .5em;
+$defaultPaddingVertical: .2em;
+$labelPadding: .4em;
+$layoutMarginHorizontal: 1.5em;
+$blockquotePadding: .8em;
+
+/* Title */
+@mixin setTitleMargin {
+    margin-top: .75em;
+    margin-bottom: .25em;
+}
+
+/* Table */
+$tableBorder: #eee;
+$tableHighlight: rgba(239,241,224,.35);
+$tableOdd: #f7f7f7;
+$tableEven: #fff;
+$tableHorizontalPadding: 16px;
+$tableResponsiveMargin: 100px;
+
+@mixin responsiveTableShadow {
+    -webkit-overflow-scrolling: touch;
+    background: -webkit-radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+    background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+    background-size: 4px 100%, 4px 100%;
+    background-attachment: scroll, scroll;
+    background-repeat: no-repeat;
+}
+
+@mixin responsiveTableMask($direction: left) {
+    @if $direction == left {
+      background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+      background-position: 100% 0;
+    } @else if $direction == right {
+      background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    }
+    background-repeat: no-repeat;
+    background-size: 10px 100%;
+}
+
+
+/*Form */
+$defaultInputHeight: 2rem;
+$largeInputHeight: 2.8rem;
+$smallInputHeight: 1.6rem;
+
+@mixin formState {
+    position: relative;
+    display: inline-block;
+    &:after {
+        @include setAscon;
+        position: absolute;
+        top: 50%;
+        right: .4em;
+        transform: translateY(-50%);
+        font-size: 1.1em;
+    }
+}
+
+@mixin formStateContent($state) {
+    @if $state == error {
+        content: $iError;
+        color: $asError;
+        animation: AsBlink .8s infinite;
+    } @else if $state == warning {
+        content: $iWarning;
+        color: $asWarning;
+        animation: AsBlink .8s infinite;
+   } @else if $state == success {
+        content: $iCheck;
+        color: $asSuccess;
+        animation: AsFadeIn .8s;
+   }
+}
+
+/* Button */
+$buttonFontSize: .85rem;
+$buttonPaddingTopBottom: .6em;
+$buttonPaddingLeftRight: 1.2em;
+
+/* List */
+$listNumPadding: 1.5em;

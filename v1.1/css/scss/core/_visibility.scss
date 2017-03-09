@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	VISIBILITY
+*/
+.as {
+	&-text-hide {
+		@include textHide(true);
+	}
+	&-hide {
+		display: none !important;
+		visibility: hidden !important;
+	}
+	&-show {
+		display: block !important;
+	}
+	&-visible {
+		visibility: visible;
+	}
+	&-invisible {
+		visibility: hidden;
+	}
+}
