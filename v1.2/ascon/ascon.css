@@ -1,0 +1,363 @@
+@font-face {
+  font-family: 'ascon';
+  src:
+    url('fonts/ascon.ttf?aye9ud') format('truetype'),
+    url('fonts/ascon.woff?aye9ud') format('woff'),
+    url('fonts/ascon.svg?aye9ud#ascon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ascon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ascon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ascon-arrow-bottom-100:before {
+  content: "\e900";
+}
+.ascon-arrow-bottom-200:before {
+  content: "\e901";
+}
+.ascon-arrow-left-100:before {
+  content: "\e902";
+}
+.ascon-arrow-left-200:before {
+  content: "\e903";
+}
+.ascon-arrow-right-100:before {
+  content: "\e904";
+}
+.ascon-arrow-right-200:before {
+  content: "\e905";
+}
+.ascon-arrow-top-100:before {
+  content: "\e906";
+}
+.ascon-arrow-top-200:before {
+  content: "\e907";
+}
+.ascon-arrow-prev:before {
+  content: "\e908";
+}
+.ascon-arrow-next:before {
+  content: "\e909";
+}
+.ascon-menu-100:before {
+  content: "\e90a";
+}
+.ascon-menu-200:before {
+  content: "\e90b";
+}
+.ascon-plus-100:before {
+  content: "\e90c";
+}
+.ascon-plus-200:before {
+  content: "\e90d";
+}
+.ascon-minus-100:before {
+  content: "\e90e";
+}
+.ascon-minus-200:before {
+  content: "\e90f";
+}
+.ascon-check-100:before {
+  content: "\e910";
+}
+.ascon-check-200:before {
+  content: "\e911";
+}
+.ascon-close-100:before {
+  content: "\e912";
+}
+.ascon-close-200:before {
+  content: "\e913";
+}
+.ascon-play:before {
+  content: "\e914";
+}
+.ascon-pause:before {
+  content: "\e915";
+}
+.ascon-stop:before {
+  content: "\e916";
+}
+.ascon-play-prev:before {
+  content: "\e917";
+}
+.ascon-play-next:before {
+  content: "\e918";
+}
+.ascon-backward:before {
+  content: "\e919";
+}
+.ascon-forward:before {
+  content: "\e91a";
+}
+.ascon-download:before {
+  content: "\e91b";
+}
+.ascon-upload:before {
+  content: "\e91c";
+}
+.ascon-down-cloud:before {
+  content: "\e91d";
+}
+.ascon-up-cloud:before {
+  content: "\e91e";
+}
+.ascon-speaker:before {
+  content: "\e91f";
+}
+.ascon-speaker-mute:before {
+  content: "\e920";
+}
+.ascon-phone:before {
+  content: "\e921";
+}
+.ascon-phone-receive:before {
+  content: "\e922";
+}
+.ascon-phone-send:before {
+  content: "\e923";
+}
+.ascon-mobile:before {
+  content: "\e924";
+}
+.ascon-delete:before {
+  content: "\e943";
+}
+.ascon-delete-inverse:before {
+  content: "\e944";
+}
+.ascon-screen-full:before {
+  content: "\e945";
+}
+.ascon-screen-reduce:before {
+  content: "\e946";
+}
+.ascon-move:before {
+  content: "\e947";
+}
+.ascon-pencil:before {
+  content: "\e948";
+}
+.ascon-pencil-line:before {
+  content: "\e949";
+}
+.ascon-error:before {
+  content: "\e94a";
+}
+.ascon-error-line:before {
+  content: "\e94b";
+}
+.ascon-man:before {
+  content: "\e94c";
+}
+.ascon-man-line:before {
+  content: "\e94d";
+}
+.ascon-warning:before {
+  content: "\e94e";
+}
+.ascon-warning-line:before {
+  content: "\e94f";
+}
+.ascon-send:before {
+  content: "\e950";
+}
+.ascon-send-inverse:before {
+  content: "\e951";
+}
+.ascon-camera:before {
+  content: "\e965";
+}
+.ascon-camera-inverse:before {
+  content: "\e966";
+}
+.ascon-mail:before {
+  content: "\e952";
+}
+.ascon-share:before {
+  content: "\e953";
+}
+.ascon-share-line:before {
+  content: "\e954";
+}
+.ascon-star:before {
+  content: "\e955";
+}
+.ascon-star-line:before {
+  content: "\e956";
+}
+.ascon-triangle:before {
+  content: "\e957";
+}
+.ascon-triangle-rounded:before {
+  content: "\e958";
+}
+.ascon-search:before {
+  content: "\e959";
+}
+.ascon-flag:before {
+  content: "\e95a";
+}
+.ascon-location:before {
+  content: "\e95b";
+}
+.ascon-link:before {
+  content: "\e95c";
+}
+.ascon-reload:before {
+  content: "\e95d";
+}
+.ascon-return:before {
+  content: "\e95e";
+}
+.ascon-document:before {
+  content: "\e95f";
+}
+.ascon-document-copy:before {
+  content: "\e960";
+}
+.ascon-chat:before {
+  content: "\e961";
+}
+.ascon-wifi:before {
+  content: "\e962";
+}
+.ascon-calendar:before {
+  content: "\e963";
+}
+.ascon-comma:before {
+  content: "\e967";
+}
+.ascon-comma-single:before {
+  content: "\e969";
+}
+.ascon-comma-square:before {
+  content: "\e968";
+}
+.ascon-comma-square-single:before {
+  content: "\e96a";
+}
+.ascon-exclamation:before {
+  content: "\e96b";
+}
+.ascon-question:before {
+  content: "\e96c";
+}
+.ascon-cursor:before {
+  content: "\e96e";
+}
+.ascon-cursor-line:before {
+  content: "\e96f";
+}
+.ascon-attrest:before {
+  content: "\e926";
+}
+.ascon-attrest-simbol:before {
+  content: "\e925";
+}
+.ascon-browser-chrome:before {
+  content: "\e927";
+}
+.ascon-browser-explorer:before {
+  content: "\e928";
+}
+.ascon-browser-firefox:before {
+  content: "\e929";
+}
+.ascon-browser-opera:before {
+  content: "\e92a";
+}
+.ascon-browser-safari:before {
+  content: "\e92b";
+}
+.ascon-facebook:before {
+  content: "\e92c";
+}
+.ascon-facebook-inverse:before {
+  content: "\e92d";
+}
+.ascon-google-plus:before {
+  content: "\e92e";
+}
+.ascon-instagram:before {
+  content: "\e92f";
+}
+.ascon-instagram-inverse:before {
+  content: "\e930";
+}
+.ascon-kakao-story:before {
+  content: "\e931";
+}
+.ascon-kakao-story-inverse:before {
+  content: "\e932";
+}
+.ascon-kakao-talk:before {
+  content: "\e933";
+}
+.ascon-kakao-talk-inverse:before {
+  content: "\e934";
+}
+.ascon-linked-in:before {
+  content: "\e935";
+}
+.ascon-linked-in-inverse:before {
+  content: "\e936";
+}
+.ascon-naver:before {
+  content: "\e937";
+}
+.ascon-naver-inverse:before {
+  content: "\e938";
+}
+.ascon-naver-line:before {
+  content: "\e939";
+}
+.ascon-naver-line-inverse:before {
+  content: "\e93a";
+}
+.ascon-naver-blog:before {
+  content: "\e941";
+}
+.ascon-naver-blog-inverse:before {
+  content: "\e942";
+}
+.ascon-pinterest:before {
+  content: "\e93b";
+}
+.ascon-pinterest-inverse:before {
+  content: "\e93c";
+}
+.ascon-tumblr:before {
+  content: "\e93d";
+}
+.ascon-tumblr-inverse:before {
+  content: "\e93e";
+}
+.ascon-twitter:before {
+  content: "\e93f";
+}
+.ascon-twitter-inverse:before {
+  content: "\e940";
+}
+.ascon-rss:before {
+  content: "\e964";
+}
+.ascon-rss-inverse:before {
+  content: "\e96d";
+}
+

@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	PADDING
+*/
+.as-padding {
+	padding: $defaultPadding;
+	&-none {
+		padding: 0 !important;
+	}
+	&-top {
+		&-none {
+			padding-top: 0 !important;
+		}
+		@for $i from 1 through 10 {
+			&-#{$i} {
+				padding-top: 0px + $i !important;
+			}
+			&-#{$i}x {
+				padding-top: 10px * $i !important;
+			}
+		}
+	}
+	&-bottom {
+		&-none {
+			padding-bottom: 0 !important;
+		}
+		@for $i from 1 through 10 {
+			&-#{$i} {
+				padding-bottom: 0px + $i !important;
+			}
+			&-#{$i}x {
+				padding-bottom: 10px * $i !important;
+			}
+		}
+	}
+	&-left {
+		&-none {
+			padding-left: 0 !important;
+		}
+		@for $i from 1 through 10 {
+			&-#{$i} {
+				padding-left: 0px + $i !important;
+			}
+			&-#{$i}x {
+				padding-left: 10px * $i !important;
+			}
+		}
+	}
+	&-right {
+		&-none {
+			padding-right: 0 !important;
+		}
+		@for $i from 1 through 10 {
+			&-#{$i} {
+				padding-right: 0px + $i !important;
+			}
+			&-#{$i}x {
+				padding-right: 10px * $i !important;
+			}
+		}
+	}
+}

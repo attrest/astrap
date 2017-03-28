@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	RADIUS
+*/
+.as-radius {
+	@for $i from 2 through 16 {
+		&-#{$i} {
+			border-radius: 1px * $i;
+		}
+	}/* for */
+	@for $i from 2 through 10 {
+		&-#{$i}x {
+			border-radius: 10px * $i;
+		}
+	}/* for */
+}

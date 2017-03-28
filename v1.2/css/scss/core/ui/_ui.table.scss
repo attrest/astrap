@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+/*
+ * Pub Date : 2017-01-05
+ * Version : v1.0
+ * License : MIT License (https://opensource.org/licenses/MIT)
+ * Author: attrest(http://www.attrest.com)
+ */
+
+/* Mixin */
+@import "../../mixin/_mixin.scss";
+@import "../import/_common.scss";
+
+.as-ui {
+    /*=================================================
+        Responsive Overflow Table - responsiveOverflowTable()
+    */
+    @media screen and (max-width: $responsiveBreakpointMin) {
+        &-responsive-overflow-table {
+            display: inline-block;
+            width: 100%;
+            white-space: nowrap;
+            thead, tbody, thead tr, th {
+                display: block;
+            }
+            thead {
+                float: left;
+                th {
+                    text-align: left;
+                }
+            }
+            tbody {
+                position: relative;
+                width: auto;
+                overflow-x: auto;
+                @include responsiveTableShadow;
+                tr {
+                   display: table-cell;
+                    &:first-child {
+                        @include responsiveTableMask(right);
+                    }
+                    &:last-child {
+                        @include responsiveTableMask(left);
+                    }
+                    td {
+                        display: block;
+                    }
+                }
+            }
+            &.as-table-bordered {
+                thead, tbody {
+                    border-top: 2px solid $defaultBlack;
+                }
+                th, td {
+                    border-right: 0;
+                    border-bottom: 0;
+                }
+                thead th {
+                    border-right: 0 !important;
+                }
+                tr:last-child th, tr:last-child td {
+                    border-right: 1px solid $tableBorder;
+                }
+                tr th:last-child, tr td:last-child {
+                    border-bottom: 1px solid $tableBorder;
+                }
+            }
+        }
+    }
+}
+

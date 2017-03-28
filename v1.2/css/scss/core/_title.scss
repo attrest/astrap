@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	TITLE
+*/
+.as-title {
+	font-size: $defaultTitSize;
+	font-weight: $defaultFontWeightBold;
+	line-height: $defaultTitLineHeight;
+	@include setTitleMargin;
+
+	/* Title Size */
+	&.as-title-bigger {
+	   font-size: $defaultTitSize*1.2;
+	}
+	&.as-title-smaller {
+		font-size: $defaultTitSize*0.8;
+	}
+	&.as-title-xs {
+		font-size: $defaultTitSize*0.6;
+	}
+	&.as-title-small {
+	   font-size: $defaultTitSize*0.7;
+	}
+	&.as-title-large {
+	   font-size: $defaultTitSize*1.4;
+	}
+	&.as-title-xl {
+		font-size: $defaultTitSize*1.8;
+	}
+
+	/* Title Style */
+	&.as-title-underline {
+		padding-bottom: .3em;
+		border-bottom: 1px solid #ddd;
+		line-height: 1;
+	}
+	&.as-title-bar {
+		position: relative;
+		line-height: 1;
+		padding-left: .76rem;
+		&:before {
+			content: "";
+			position: absolute;
+			top: .1em;
+			left: 0;
+			bottom: 0;
+			width: 3px;
+			background: #9e9e9e;
+		}
+	}
+	&.as-title-arrow {
+		@include setAscon;
+		position: relative;
+		margin-left: -6px;
+		line-height: 1;
+		&:before {
+			content: $iArrowRight;
+			font-size: .8em;
+			color: $defaultGrayDark;
+		}
+	}
+}
+
+.as {
+	&-h1 {
+		font-size: $defaultFontSize * 2.1;
+		font-weight: $defaultFontWeightBold;
+		@include setTitleMargin;
+	}
+	&-h2 {
+		font-size: $defaultFontSize * 1.9;
+		font-weight: $defaultFontWeightBold;
+		@include setTitleMargin;
+	}
+	&-h3 {
+		font-size: $defaultFontSize * 1.7;
+		font-weight: $defaultFontWeightBold;
+		@include setTitleMargin;
+	}
+	&-h4 {
+		font-size: $defaultFontSize * 1.5;
+		font-weight: $defaultFontWeightBold;
+		@include setTitleMargin;
+	}
+	&-h5 {
+		font-size: $defaultFontSize * 1.3;
+		font-weight: $defaultFontWeightBold;
+		@include setTitleMargin;
+	}
+	&-h6 {
+		font-size: $defaultFontSize * 1.1;
+		font-weight: $defaultFontWeightBold;
+		@include setTitleMargin;
+	}
+}

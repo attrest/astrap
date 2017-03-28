@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+/* Mixin */
+@import "../mixin/_mixin.scss";
+@import "import/_common.scss";
+
+/*=================================================
+	PRINT
+*/
+.as {
+	&-print {
+		@media print {
+			body,
+			.as-wrap,
+			.as-content {
+				background-color: #fff !important;
+				color: $defaultBlack !important;
+			}
+			a:link:after, a:visited:after {
+				content: " (" attr(href) ") ";
+				font-size: 90%;
+				color: $defaultGrayDark;
+			}
+			&-global-header, &-global-footer {
+				display: none !important;
+			}
+		}
+	}
+	@media print {
+		&-print-show {
+			display: block !important;
+		}
+		&-print-hide {
+			display: none !important;
+		}
+	}
+}
